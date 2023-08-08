@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Api Giphy</title>
+</head>
+<body>
+    
+    
+    <div class="response-area">
+        <%if (locals.content) {%>
+            <h1>API Giphy - @<%= content.data.username %></h1> 
+            <img src="<%= content.data.images.original.url %>" alt="GIF">
+            <%} else {%>
+            <%= error %>
+        <%}%>
+    </div>
+    
+    <form id="myForm" >
+      <input id="get" type="submit" value="GIF's" formaction="/">
+      <input id="get" type="submit" value="Stickers" formaction="/stickers">
+    </form>
+</body>
+</html>
